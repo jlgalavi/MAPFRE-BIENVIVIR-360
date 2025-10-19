@@ -76,6 +76,12 @@ body {
     gap: 12px;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 .logo-text {
     display: flex;
     flex-direction: column;
@@ -1603,9 +1609,8 @@ body {
         transform: scale(0.8);
     }
     
-    .logo svg {
-        width: 100px;
-        height: 33px;
+    .logo-img {
+        height: 30px;
     }
     
     .marketplace-filters {
