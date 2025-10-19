@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initializePrimaChart();
 });
 
+// Toggle mobile menu
+function toggleMobileMenu() {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('mobile-open');
+}
+
 function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
@@ -25,6 +31,12 @@ function initializeNavigation() {
             // Show corresponding section
             const sectionId = link.getAttribute('data-section');
             document.getElementById(sectionId).classList.add('active');
+            
+            // Close mobile menu if open
+            const nav = document.getElementById('mainNav');
+            if (nav.classList.contains('mobile-open')) {
+                nav.classList.remove('mobile-open');
+            }
         });
     });
 }
@@ -94,13 +106,13 @@ function addMessage(text, sender) {
 
 function generateAureaResponse(message) {
     const responses = {
-        '¿Cómo puedo mejorar mi score?': '¡Excelente pregunta! 🎯 Veo que tu área de mayor oportunidad es el descanso. Te recomiendo:\n\n1. Mantén una rutina de sueño regular\n2. Desconecta dispositivos 1 hora antes de dormir\n3. Prueba nuestra meditación guiada nocturna\n\n¿Te gustaría que te programe recordatorios?',
+        'How can I improve my score?': '🎯 Excellent question! I see your biggest opportunity area is rest. I recommend:\n\n1. Maintain a regular sleep routine\n2. Disconnect devices 1 hour before bed\n3. Try our guided nighttime meditation\n\nWould you like me to schedule reminders for you?',
         
-        '¿Qué recompensas puedo canjear?': '🎁 ¡Tienes 1,240 puntos disponibles! Te recomiendo:\n\n• Mes gratis en gimnasio (800 puntos) - ¡Perfecto para tu objetivo fitness!\n• Consulta nutricionista (500 puntos)\n• Plan nutricional mensual (600 puntos)\n\n¿Cuál te interesa más?',
+        'What rewards can I redeem?': '🎁 You have 1,240 points available! I recommend:\n\n• Free month at gym (800 points) - Perfect for your fitness goal!\n• Nutritionist consultation (500 points)\n• Monthly nutrition plan (600 points)\n\nWhich one interests you most?',
         
-        '¿Qué ejercicios me recomiendas?': '🏃 Basándome en tu perfil y objetivos, te sugiero:\n\n**Esta semana:**\n- Lunes: 30 min cardio moderado\n- Miércoles: Yoga o pilates (flexibilidad)\n- Viernes: Entrenamiento de fuerza\n- Domingo: Caminata activa\n\n¿Quieres que te envíe rutinas detalladas?',
+        'What exercises do you recommend?': '🏃 Based on your profile and goals, I suggest:\n\n**This week:**\n- Monday: 30 min moderate cardio\n- Wednesday: Yoga or pilates (flexibility)\n- Friday: Strength training\n- Sunday: Active walk\n\nWould you like me to send you detailed routines?',
         
-        '¿Cómo está mi progreso?': '📊 ¡Tu progreso es excelente! Aquí está tu resumen:\n\n✅ Score Bienvivir: 850/1000 (+12% este mes)\n✅ Racha activa: 23 días\n✅ Prima reducida: -15% (ahorras 28€/mes)\n✅ Puntos ganados: 1,240\n\n¡Sigue así! Estás en el top 10% de usuarios 🌟'
+        'How is my progress?': '📊 Your progress is excellent! Here\'s your summary:\n\n✅ Bienvivir Score: 850/1000 (+12% this month)\n✅ Active streak: 23 days\n✅ Reduced premium: -15% (saving €28/month)\n✅ Points earned: 1,240\n\nKeep it up! You\'re in the top 10% of users 🌟'
     };
     
     // Check for exact match
@@ -110,15 +122,15 @@ function generateAureaResponse(message) {
     
     // Default responses based on keywords
     if (message.toLowerCase().includes('score')) {
-        return responses['¿Cómo puedo mejorar mi score?'];
-    } else if (message.toLowerCase().includes('recompensa') || message.toLowerCase().includes('canje')) {
-        return responses['¿Qué recompensas puedo canjear?'];
-    } else if (message.toLowerCase().includes('ejercicio') || message.toLowerCase().includes('rutina')) {
-        return responses['¿Qué ejercicios me recomiendas?'];
-    } else if (message.toLowerCase().includes('progreso')) {
-        return responses['¿Cómo está mi progreso?'];
+        return responses['How can I improve my score?'];
+    } else if (message.toLowerCase().includes('reward') || message.toLowerCase().includes('redeem')) {
+        return responses['What rewards can I redeem?'];
+    } else if (message.toLowerCase().includes('exercise') || message.toLowerCase().includes('routine')) {
+        return responses['What exercises do you recommend?'];
+    } else if (message.toLowerCase().includes('progress')) {
+        return responses['How is my progress?'];
     } else {
-        return '¡Entiendo! 😊 Estoy aquí para ayudarte con:\n\n• Tu Score Bienvivir y cómo mejorarlo\n• Recomendaciones personalizadas de ejercicios y nutrición\n• Gestión de tus recompensas y puntos\n• Información sobre tu póliza y beneficios\n\n¿Sobre qué te gustaría hablar?';
+        return 'I understand! 😊 I\'m here to help you with:\n\n• Your Bienvivir Score and how to improve it\n• Personalized exercise and nutrition recommendations\n• Managing your rewards and points\n• Information about your policy and benefits\n\nWhat would you like to talk about?';
     }
 }
 
@@ -349,12 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 addBtn.remove();
                 const status = card.querySelector('.module-status');
                 if (status) {
-                    status.textContent = 'Activo';
+                    status.textContent = 'Active';
                     status.classList.remove('inactive');
                 }
                 
                 // Show success message
-                showNotification('¡Módulo añadido correctamente! 🎉');
+                showNotification('Module successfully added! 🎉');
             });
         }
     });
@@ -364,9 +376,9 @@ document.addEventListener('DOMContentLoaded', () => {
     rewardCards.forEach(btn => {
         btn.addEventListener('click', () => {
             if (!btn.disabled) {
-                showNotification('¡Recompensa canjeada con éxito! 🎁');
+                showNotification('Reward successfully redeemed! 🎁');
                 btn.disabled = true;
-                btn.textContent = 'Canjeado';
+                btn.textContent = 'Redeemed';
             }
         });
     });

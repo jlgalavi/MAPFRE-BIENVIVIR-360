@@ -76,6 +76,11 @@ body {
     gap: 12px;
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo h1 {
     font-size: 20px;
     font-weight: 700;
@@ -91,6 +96,23 @@ body {
     font-size: 11px;
     color: var(--text-secondary);
     margin-top: -4px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    background: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .nav {
@@ -1389,27 +1411,111 @@ body {
     .poliza-summary {
         grid-template-columns: 1fr;
     }
+    
+    .prima-display {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
+        gap: 16px;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        order: 2;
+    }
+    
+    .logo {
+        order: 1;
+        flex: 1;
+    }
+    
+    .logo h1 {
+        font-size: 16px;
+    }
+    
+    .tagline {
+        font-size: 10px;
+    }
+    
+    .user-profile {
+        order: 3;
+    }
+    
+    .user-name {
+        display: none;
     }
 
     .nav {
-        order: 3;
+        order: 4;
         width: 100%;
         justify-content: flex-start;
         overflow-x: auto;
+        display: none;
+        flex-direction: column;
+        background: var(--bg-color);
+        padding: 12px;
+        border-radius: var(--border-radius);
+        gap: 4px;
+    }
+    
+    .nav.mobile-open {
+        display: flex;
+    }
+    
+    .nav-link {
+        width: 100%;
+        text-align: left;
     }
 
     .welcome-banner {
         flex-direction: column;
         text-align: center;
+        padding: 24px;
+    }
+    
+    .welcome-content h2 {
+        font-size: 22px;
+    }
+    
+    .welcome-content p {
+        font-size: 14px;
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .stat-card {
+        padding: 16px;
+    }
+    
+    .score-container {
+        gap: 32px;
+    }
+    
+    .score-details {
+        gap: 12px;
+    }
+    
+    .score-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .score-item-header {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .score-bar {
+        width: 100%;
     }
 
     .marketplace-grid {
@@ -1418,6 +1524,97 @@ body {
 
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .aurea-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .aurea-sidebar {
+        order: 2;
+    }
+    
+    .aurea-chat {
+        order: 1;
+        min-height: 400px;
+    }
+    
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modulo-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .modulo-icon-large {
+        margin: 0 auto;
+    }
+    
+    .modulo-price {
+        align-items: center;
+        margin-top: 12px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .marketplace-header {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .marketplace-header h2 {
+        font-size: 24px;
+    }
+    
+    .points-display {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .poliza-header h2 {
+        font-size: 24px;
+    }
+    
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .activity-time {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .card {
+        padding: 16px;
+    }
+    
+    .score-circle {
+        transform: scale(0.8);
+    }
+    
+    .logo svg {
+        width: 100px;
+        height: 33px;
+    }
+    
+    .marketplace-filters {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
     }
 }
 

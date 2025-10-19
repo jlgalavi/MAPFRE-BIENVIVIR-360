@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAPFRE Bienvivir 360 - Tu ecosistema de bienestar</title>
+    <title>MAPFRE Bienvivir 360 - Your Wellbeing Ecosystem</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +15,27 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <rect width="40" height="40" rx="8" fill="#D2001B"/>
-                        <path d="M20 10L25 18H27L20 8L13 18H15L20 10Z" fill="white"/>
-                        <path d="M20 30L15 22H13L20 32L27 22H25L20 30Z" fill="white"/>
-                        <path d="M12 20H28M20 12V28" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Logo MAPFRE -->
+                        <rect x="0" y="8" width="40" height="24" rx="2" fill="#D2001B"/>
+                        <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">M</text>
+                        <text x="50" y="26" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#D2001B">APFRE</text>
                     </svg>
-                    <div>
-                        <h1>MAPFRE <span class="bienvivir">Bienvivir 360</span></h1>
-                        <p class="tagline">De asegurarte cuando caes, a acompañarte para que vivas mejor</p>
+                    <div class="logo-text">
+                        <h1><span class="bienvivir">Bienvivir 360</span></h1>
+                        <p class="tagline">From covering you when you fall, to helping you live better</p>
                     </div>
                 </div>
-                <nav class="nav">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="currentColor"/>
+                    </svg>
+                </button>
+                <nav class="nav" id="mainNav">
                     <a href="#" class="nav-link active" data-section="dashboard">Dashboard</a>
-                    <a href="#" class="nav-link" data-section="aurea">IA Áurea</a>
+                    <a href="#" class="nav-link" data-section="aurea">AI Áurea</a>
                     <a href="#" class="nav-link" data-section="marketplace">Marketplace</a>
-                    <a href="#" class="nav-link" data-section="poliza">Mi Póliza</a>
+                    <a href="#" class="nav-link" data-section="poliza">My Policy</a>
                 </nav>
                 <div class="user-profile">
                     <div class="notifications">
@@ -54,15 +59,15 @@
                 <!-- Welcome Banner -->
                 <div class="welcome-banner">
                     <div class="welcome-content">
-                        <h2>¡Bienvenido de nuevo, José Luis! 👋</h2>
-                        <p>Hoy es un gran día para seguir cuidando tu bienestar. Llevas <strong>23 días</strong> de racha activa.</p>
+                        <h2>Welcome back, José Luis! 👋</h2>
+                        <p>Today is a great day to keep taking care of your wellbeing. You've maintained a <strong>23-day</strong> active streak.</p>
                     </div>
                     <div class="welcome-actions">
                         <button class="btn btn-primary" onclick="openAurea()">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="white"/>
                             </svg>
-                            Hablar con Áurea
+                            Talk to Áurea
                         </button>
                     </div>
                 </div>
@@ -70,8 +75,8 @@
                 <!-- Score Bienvivir -->
                 <div class="card score-card">
                     <div class="card-header">
-                        <h3>Tu Score Bienvivir</h3>
-                        <span class="trend positive">+12% este mes</span>
+                        <h3>Your Bienvivir Score</h3>
+                        <span class="trend positive">+12% this month</span>
                     </div>
                     <div class="score-container">
                         <div class="score-circle">
@@ -94,7 +99,7 @@
                             <div class="score-item">
                                 <div class="score-item-header">
                                     <span class="score-icon">💪</span>
-                                    <span class="score-label">Actividad Física</span>
+                                    <span class="score-label">Physical Activity</span>
                                 </div>
                                 <div class="score-bar">
                                     <div class="score-bar-fill" style="width: 90%"></div>
@@ -104,7 +109,7 @@
                             <div class="score-item">
                                 <div class="score-item-header">
                                     <span class="score-icon">🧘</span>
-                                    <span class="score-label">Equilibrio Emocional</span>
+                                    <span class="score-label">Emotional Balance</span>
                                 </div>
                                 <div class="score-bar">
                                     <div class="score-bar-fill" style="width: 85%"></div>
@@ -114,7 +119,7 @@
                             <div class="score-item">
                                 <div class="score-item-header">
                                     <span class="score-icon">🥗</span>
-                                    <span class="score-label">Nutrición</span>
+                                    <span class="score-label">Nutrition</span>
                                 </div>
                                 <div class="score-bar">
                                     <div class="score-bar-fill" style="width: 80%"></div>
@@ -124,7 +129,7 @@
                             <div class="score-item">
                                 <div class="score-item-header">
                                     <span class="score-icon">😴</span>
-                                    <span class="score-label">Descanso</span>
+                                    <span class="score-label">Rest</span>
                                 </div>
                                 <div class="score-bar">
                                     <div class="score-bar-fill" style="width: 75%"></div>
@@ -136,7 +141,7 @@
                     <div class="score-benefit">
                         <div class="benefit-icon">🎉</div>
                         <div class="benefit-text">
-                            <strong>¡Gran trabajo!</strong> Tu prima se ha reducido un <strong>15%</strong> este trimestre.
+                            <strong>Great work!</strong> Your premium has been reduced by <strong>15%</strong> this quarter.
                         </div>
                     </div>
                 </div>
@@ -151,8 +156,8 @@
                         </div>
                         <div class="stat-content">
                             <div class="stat-value">1,240</div>
-                            <div class="stat-label">Puntos Bienvivir</div>
-                            <div class="stat-change positive">+85 esta semana</div>
+                            <div class="stat-label">Bienvivir Points</div>
+                            <div class="stat-change positive">+85 this week</div>
                         </div>
                     </div>
 
@@ -164,8 +169,8 @@
                         </div>
                         <div class="stat-content">
                             <div class="stat-value">8,450</div>
-                            <div class="stat-label">Pasos hoy</div>
-                            <div class="stat-change positive">84% de objetivo</div>
+                            <div class="stat-label">Steps today</div>
+                            <div class="stat-change positive">84% of goal</div>
                         </div>
                     </div>
 
@@ -177,8 +182,8 @@
                         </div>
                         <div class="stat-content">
                             <div class="stat-value">7h 20m</div>
-                            <div class="stat-label">Sueño promedio</div>
-                            <div class="stat-change neutral">Meta: 8h</div>
+                            <div class="stat-label">Average sleep</div>
+                            <div class="stat-change neutral">Goal: 8h</div>
                         </div>
                     </div>
 
@@ -190,60 +195,60 @@
                         </div>
                         <div class="stat-content">
                             <div class="stat-value">3</div>
-                            <div class="stat-label">Retos activos</div>
-                            <div class="stat-change positive">2 completados</div>
+                            <div class="stat-label">Active challenges</div>
+                            <div class="stat-change positive">2 completed</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Módulos Activos -->
+                <!-- Active Modules -->
                 <div class="card">
                     <div class="card-header">
-                        <h3>Tus Módulos Activos</h3>
-                        <a href="#" class="link">Gestionar módulos →</a>
+                        <h3>Your Active Modules</h3>
+                        <a href="#" class="link">Manage modules →</a>
                     </div>
                     <div class="modules-grid">
                         <div class="module-card active">
                             <div class="module-icon">🏥</div>
                             <div class="module-content">
-                                <h4>Salud Integral</h4>
-                                <p>Consultas ilimitadas, chequeos anuales</p>
-                                <span class="module-status">Activo</span>
+                                <h4>Comprehensive Health</h4>
+                                <p>Unlimited consultations, annual check-ups</p>
+                                <span class="module-status">Active</span>
                             </div>
                         </div>
                         <div class="module-card active">
                             <div class="module-icon">🧠</div>
                             <div class="module-content">
-                                <h4>Bienestar Mental</h4>
-                                <p>Psicología, mindfulness, coaching</p>
-                                <span class="module-status">Activo</span>
+                                <h4>Mental Wellbeing</h4>
+                                <p>Psychology, mindfulness, coaching</p>
+                                <span class="module-status">Active</span>
                             </div>
                         </div>
                         <div class="module-card active">
                             <div class="module-icon">🏃</div>
                             <div class="module-content">
-                                <h4>Fitness & Deporte</h4>
-                                <p>Gimnasios, entrenador personal</p>
-                                <span class="module-status">Activo</span>
+                                <h4>Fitness & Sports</h4>
+                                <p>Gyms, personal trainer</p>
+                                <span class="module-status">Active</span>
                             </div>
                         </div>
                         <div class="module-card">
                             <div class="module-icon">💰</div>
                             <div class="module-content">
-                                <h4>Bienestar Financiero</h4>
-                                <p>Asesoría, planificación, inversiones</p>
-                                <span class="module-status inactive">Disponible</span>
+                                <h4>Financial Wellbeing</h4>
+                                <p>Advisory, planning, investments</p>
+                                <span class="module-status inactive">Available</span>
                             </div>
-                            <button class="btn-add">+ Añadir</button>
+                            <button class="btn-add">+ Add</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Actividad Reciente -->
+                <!-- Recent Activity -->
                 <div class="card">
                     <div class="card-header">
-                        <h3>Actividad Reciente</h3>
-                        <a href="#" class="link">Ver todo →</a>
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="link">View all →</a>
                     </div>
                     <div class="activity-list">
                         <div class="activity-item">
@@ -253,10 +258,10 @@
                                 </svg>
                             </div>
                             <div class="activity-content">
-                                <h4>Sesión de yoga completada</h4>
-                                <p>Has ganado 50 puntos Bienvivir</p>
+                                <h4>Yoga session completed</h4>
+                                <p>You earned 50 Bienvivir points</p>
                             </div>
-                            <span class="activity-time">Hace 2 horas</span>
+                            <span class="activity-time">2 hours ago</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-icon" style="background: #FEF3C7;">
@@ -265,10 +270,10 @@
                                 </svg>
                             </div>
                             <div class="activity-content">
-                                <h4>¡Nuevo logro desbloqueado!</h4>
-                                <p>Racha de 7 días seguidos</p>
+                                <h4>New achievement unlocked!</h4>
+                                <p>7-day streak</p>
                             </div>
-                            <span class="activity-time">Ayer</span>
+                            <span class="activity-time">Yesterday</span>
                         </div>
                         <div class="activity-item">
                             <div class="activity-icon" style="background: #D1FAE5;">
@@ -277,16 +282,16 @@
                                 </svg>
                             </div>
                             <div class="activity-content">
-                                <h4>Prima actualizada</h4>
-                                <p>Ahorro de 28€ este mes por tu progreso</p>
+                                <h4>Premium updated</h4>
+                                <p>Saved €28 this month through your progress</p>
                             </div>
-                            <span class="activity-time">Hace 3 días</span>
+                            <span class="activity-time">3 days ago</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- IA Áurea Section -->
+            <!-- AI Áurea Section -->
             <section id="aurea" class="section">
                 <div class="aurea-container">
                     <div class="aurea-sidebar">
@@ -307,31 +312,31 @@
                                 </div>
                             </div>
                             <h3>Áurea</h3>
-                            <p class="aurea-subtitle">Tu asistente de bienestar</p>
+                            <p class="aurea-subtitle">Your wellbeing assistant</p>
                             <div class="aurea-status">
                                 <span class="status-dot"></span>
-                                En línea
+                                Online
                             </div>
                         </div>
                         <div class="aurea-suggestions">
-                            <h4>Sugerencias rápidas</h4>
-                            <button class="suggestion-btn" onclick="sendQuickMessage('¿Cómo puedo mejorar mi score?')">
-                                💡 ¿Cómo mejorar mi score?
+                            <h4>Quick suggestions</h4>
+                            <button class="suggestion-btn" onclick="sendQuickMessage('How can I improve my score?')">
+                                💡 How to improve my score?
                             </button>
-                            <button class="suggestion-btn" onclick="sendQuickMessage('¿Qué recompensas puedo canjear?')">
-                                🎁 Recompensas disponibles
+                            <button class="suggestion-btn" onclick="sendQuickMessage('What rewards can I redeem?')">
+                                🎁 Available rewards
                             </button>
-                            <button class="suggestion-btn" onclick="sendQuickMessage('¿Qué ejercicios me recomiendas?')">
-                                🏃 Rutina de ejercicios
+                            <button class="suggestion-btn" onclick="sendQuickMessage('What exercises do you recommend?')">
+                                🏃 Exercise routine
                             </button>
-                            <button class="suggestion-btn" onclick="sendQuickMessage('¿Cómo está mi progreso?')">
-                                📊 Ver mi progreso
+                            <button class="suggestion-btn" onclick="sendQuickMessage('How is my progress?')">
+                                📊 View my progress
                             </button>
                         </div>
                     </div>
                     <div class="aurea-chat">
                         <div class="chat-header">
-                            <h3>Conversación con Áurea</h3>
+                            <h3>Conversation with Áurea</h3>
                             <button class="btn-icon" onclick="clearChat()">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                     <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM19 4H15.5L14.5 3H9.5L8.5 4H5V6H19V4Z" fill="currentColor"/>
@@ -344,13 +349,13 @@
                                     <div class="avatar-small aurea">Á</div>
                                 </div>
                                 <div class="message-content">
-                                    <p>¡Hola José Luis! 👋 Soy Áurea, tu asistente personal de bienestar. Estoy aquí para acompañarte en tu camino hacia una vida más saludable y equilibrada.</p>
-                                    <p>Veo que has tenido una semana excelente. ¿Te gustaría que revisemos juntos tu progreso o prefieres que te sugiera nuevos retos?</p>
+                                    <p>Hi José Luis! 👋 I'm Áurea, your personal wellbeing assistant. I'm here to accompany you on your journey towards a healthier and more balanced life.</p>
+                                    <p>I see you've had an excellent week. Would you like me to review your progress together, or would you prefer me to suggest new challenges?</p>
                                 </div>
                             </div>
                         </div>
                         <div class="chat-input">
-                            <input type="text" id="messageInput" placeholder="Escribe tu mensaje..." onkeypress="handleKeyPress(event)">
+                            <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
                             <button class="btn btn-primary" onclick="sendMessage()">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                                     <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="white"/>
@@ -365,24 +370,24 @@
             <section id="marketplace" class="section">
                 <div class="marketplace-header">
                     <div>
-                        <h2>Marketplace Bienvivir</h2>
-                        <p>Canjea tus puntos por experiencias y servicios de bienestar</p>
+                        <h2>Bienvivir Marketplace</h2>
+                        <p>Redeem your points for wellbeing experiences and services</p>
                     </div>
                     <div class="points-display">
                         <div class="points-icon">⭐</div>
                         <div>
                             <div class="points-value">1,240</div>
-                            <div class="points-label">Puntos disponibles</div>
+                            <div class="points-label">Available points</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="marketplace-filters">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="salud">🏥 Salud</button>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="salud">🏥 Health</button>
                     <button class="filter-btn" data-filter="fitness">💪 Fitness</button>
-                    <button class="filter-btn" data-filter="nutricion">🥗 Nutrición</button>
-                    <button class="filter-btn" data-filter="bienestar">🧘 Bienestar</button>
+                    <button class="filter-btn" data-filter="nutricion">🥗 Nutrition</button>
+                    <button class="filter-btn" data-filter="bienestar">🧘 Wellbeing</button>
                     <button class="filter-btn" data-filter="premium">⭐ Premium</button>
                 </div>
 
@@ -393,16 +398,16 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Mes gratis en gimnasio</h4>
-                                <span class="reward-badge">Destacado</span>
+                                <h4>Free month at gym</h4>
+                                <span class="reward-badge">Featured</span>
                             </div>
-                            <p>Acceso ilimitado a cualquier gimnasio de nuestra red de partners</p>
+                            <p>Unlimited access to any gym in our partner network</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>800 puntos</span>
+                                    <span>800 points</span>
                                 </div>
-                                <button class="btn btn-secondary">Canjear</button>
+                                <button class="btn btn-secondary">Redeem</button>
                             </div>
                         </div>
                     </div>
@@ -413,15 +418,15 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Consulta nutricionista</h4>
+                                <h4>Nutritionist consultation</h4>
                             </div>
-                            <p>Sesión personalizada con nutricionista certificado</p>
+                            <p>Personalized session with certified nutritionist</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>500 puntos</span>
+                                    <span>500 points</span>
                                 </div>
-                                <button class="btn btn-secondary">Canjear</button>
+                                <button class="btn btn-secondary">Redeem</button>
                             </div>
                         </div>
                     </div>
@@ -432,16 +437,16 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Retiro de mindfulness</h4>
+                                <h4>Mindfulness retreat</h4>
                                 <span class="reward-badge premium">Premium</span>
                             </div>
-                            <p>Fin de semana de desconexión y meditación</p>
+                            <p>Weekend getaway for disconnection and meditation</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>2,000 puntos</span>
+                                    <span>2,000 points</span>
                                 </div>
-                                <button class="btn btn-secondary" disabled>Insuficientes</button>
+                                <button class="btn btn-secondary" disabled>Insufficient</button>
                             </div>
                         </div>
                     </div>
@@ -452,15 +457,15 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Plan nutricional mensual</h4>
+                                <h4>Monthly nutrition plan</h4>
                             </div>
-                            <p>Dieta personalizada y seguimiento semanal</p>
+                            <p>Personalized diet and weekly follow-up</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>600 puntos</span>
+                                    <span>600 points</span>
                                 </div>
-                                <button class="btn btn-secondary">Canjear</button>
+                                <button class="btn btn-secondary">Redeem</button>
                             </div>
                         </div>
                     </div>
@@ -471,15 +476,15 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Kit deportivo premium</h4>
+                                <h4>Premium sports kit</h4>
                             </div>
-                            <p>Ropa y accesorios deportivos de marca</p>
+                            <p>Branded sportswear and accessories</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>1,200 puntos</span>
+                                    <span>1,200 points</span>
                                 </div>
-                                <button class="btn btn-secondary">Canjear</button>
+                                <button class="btn btn-secondary">Redeem</button>
                             </div>
                         </div>
                     </div>
@@ -490,193 +495,193 @@
                         </div>
                         <div class="reward-content">
                             <div class="reward-header">
-                                <h4>Suplementos vitamínicos</h4>
+                                <h4>Vitamin supplements</h4>
                             </div>
-                            <p>Pack de vitaminas y minerales esenciales</p>
+                            <p>Pack of essential vitamins and minerals</p>
                             <div class="reward-footer">
                                 <div class="reward-points">
                                     <span class="points-icon">⭐</span>
-                                    <span>300 puntos</span>
+                                    <span>300 points</span>
                                 </div>
-                                <button class="btn btn-secondary">Canjear</button>
+                                <button class="btn btn-secondary">Redeem</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="partners-section">
-                    <h3>Partners Colaboradores</h3>
+                    <h3>Partner Network</h3>
                     <div class="partners-grid">
                         <div class="partner-card">
                             <div class="partner-logo">🏋️</div>
                             <h4>FitnessPlus</h4>
-                            <p>Red de gimnasios</p>
+                            <p>Gym network</p>
                         </div>
                         <div class="partner-card">
                             <div class="partner-logo">🥗</div>
                             <h4>Nutrilife</h4>
-                            <p>Nutrición personalizada</p>
+                            <p>Personalized nutrition</p>
                         </div>
                         <div class="partner-card">
                             <div class="partner-logo">🧘</div>
                             <h4>ZenMind</h4>
-                            <p>Mindfulness y yoga</p>
+                            <p>Mindfulness and yoga</p>
                         </div>
                         <div class="partner-card">
                             <div class="partner-logo">❤️</div>
                             <h4>CarePlus</h4>
-                            <p>Seguros de salud</p>
+                            <p>Health insurance</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Póliza Section -->
+            <!-- Policy Section -->
             <section id="poliza" class="section">
                 <div class="poliza-header">
-                    <h2>Mi Póliza Dinámica</h2>
-                    <p>Tu seguro que se adapta a tu estilo de vida</p>
+                    <h2>My Dynamic Policy</h2>
+                    <p>Your insurance that adapts to your lifestyle</p>
                 </div>
 
                 <div class="poliza-summary">
                     <div class="card">
-                        <h3>Resumen de tu Póliza</h3>
+                        <h3>Policy Summary</h3>
                         <div class="poliza-info">
                             <div class="poliza-item">
-                                <span class="poliza-label">Número de póliza:</span>
+                                <span class="poliza-label">Policy number:</span>
                                 <span class="poliza-value">BV360-2025-00123</span>
                             </div>
                             <div class="poliza-item">
-                                <span class="poliza-label">Fecha de inicio:</span>
-                                <span class="poliza-value">01 Enero 2025</span>
+                                <span class="poliza-label">Start date:</span>
+                                <span class="poliza-value">January 1, 2025</span>
                             </div>
                             <div class="poliza-item">
-                                <span class="poliza-label">Próxima renovación:</span>
-                                <span class="poliza-value">01 Enero 2026</span>
+                                <span class="poliza-label">Next renewal:</span>
+                                <span class="poliza-value">January 1, 2026</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="card prima-card">
-                        <h3>Prima Variable</h3>
+                        <h3>Variable Premium</h3>
                         <div class="prima-display">
                             <div class="prima-current">
-                                <span class="prima-label">Prima actual</span>
+                                <span class="prima-label">Current premium</span>
                                 <div class="prima-amount">
-                                    <span class="prima-value">89€</span>
-                                    <span class="prima-period">/mes</span>
+                                    <span class="prima-value">€89</span>
+                                    <span class="prima-period">/month</span>
                                 </div>
-                                <span class="prima-change">-15% vs. prima base (105€)</span>
+                                <span class="prima-change">-15% vs. base premium (€105)</span>
                             </div>
                             <div class="prima-chart">
                                 <svg width="200" height="100" viewBox="0 0 200 100">
-                                    <path d="M 10 80 Q 50 60, 100 40 T 190 20" stroke="#00A88E" stroke-width="3" fill="none" stroke-linecap="round"/>
-                                    <circle cx="190" cy="20" r="5" fill="#00A88E"/>
+                                    <path d="M 10 80 Q 50 60, 100 40 T 190 20" stroke="#D2001B" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                    <circle cx="190" cy="20" r="5" fill="#D2001B"/>
                                 </svg>
                             </div>
                         </div>
                         <div class="prima-explanation">
-                            <p>💡 <strong>Tu prima se reduce automáticamente</strong> según tu Score Bienvivir. Cuanto mejor te cuides, menos pagas.</p>
+                            <p>💡 <strong>Your premium is reduced automatically</strong> according to your Bienvivir Score. The better you take care of yourself, the less you pay.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
-                        <h3>Módulos Contratados</h3>
-                        <button class="btn btn-primary btn-sm">+ Añadir módulo</button>
+                        <h3>Contracted Modules</h3>
+                        <button class="btn btn-primary btn-sm">+ Add module</button>
                     </div>
                     <div class="modulos-list">
                         <div class="modulo-item active">
                             <div class="modulo-icon-large">🏥</div>
                             <div class="modulo-details">
-                                <h4>Salud Integral</h4>
-                                <p>Cobertura médica completa con consultas ilimitadas</p>
+                                <h4>Comprehensive Health</h4>
+                                <p>Complete medical coverage with unlimited consultations</p>
                                 <div class="modulo-benefits">
-                                    <span class="benefit-tag">✓ Medicina general</span>
-                                    <span class="benefit-tag">✓ Especialistas</span>
-                                    <span class="benefit-tag">✓ Chequeos anuales</span>
-                                    <span class="benefit-tag">✓ Urgencias 24/7</span>
+                                    <span class="benefit-tag">✓ General medicine</span>
+                                    <span class="benefit-tag">✓ Specialists</span>
+                                    <span class="benefit-tag">✓ Annual check-ups</span>
+                                    <span class="benefit-tag">✓ 24/7 emergencies</span>
                                 </div>
                             </div>
                             <div class="modulo-price">
-                                <span class="price-amount">35€</span>
-                                <span class="price-period">/mes</span>
+                                <span class="price-amount">€35</span>
+                                <span class="price-period">/month</span>
                             </div>
                         </div>
 
                         <div class="modulo-item active">
                             <div class="modulo-icon-large">🧠</div>
                             <div class="modulo-details">
-                                <h4>Bienestar Mental</h4>
-                                <p>Cuida tu salud emocional y equilibrio personal</p>
+                                <h4>Mental Wellbeing</h4>
+                                <p>Take care of your emotional health and personal balance</p>
                                 <div class="modulo-benefits">
-                                    <span class="benefit-tag">✓ 12 sesiones psicología</span>
-                                    <span class="benefit-tag">✓ App mindfulness</span>
-                                    <span class="benefit-tag">✓ Coaching personal</span>
+                                    <span class="benefit-tag">✓ 12 psychology sessions</span>
+                                    <span class="benefit-tag">✓ Mindfulness app</span>
+                                    <span class="benefit-tag">✓ Personal coaching</span>
                                 </div>
                             </div>
                             <div class="modulo-price">
-                                <span class="price-amount">25€</span>
-                                <span class="price-period">/mes</span>
+                                <span class="price-amount">€25</span>
+                                <span class="price-period">/month</span>
                             </div>
                         </div>
 
                         <div class="modulo-item active">
                             <div class="modulo-icon-large">🏃</div>
                             <div class="modulo-details">
-                                <h4>Fitness & Deporte</h4>
-                                <p>Mantente activo con nuestra red de partners deportivos</p>
+                                <h4>Fitness & Sports</h4>
+                                <p>Stay active with our network of sports partners</p>
                                 <div class="modulo-benefits">
-                                    <span class="benefit-tag">✓ Gimnasios ilimitados</span>
-                                    <span class="benefit-tag">✓ Clases grupales</span>
-                                    <span class="benefit-tag">✓ Entrenador online</span>
+                                    <span class="benefit-tag">✓ Unlimited gyms</span>
+                                    <span class="benefit-tag">✓ Group classes</span>
+                                    <span class="benefit-tag">✓ Online trainer</span>
                                 </div>
                             </div>
                             <div class="modulo-price">
-                                <span class="price-amount">29€</span>
-                                <span class="price-period">/mes</span>
+                                <span class="price-amount">€29</span>
+                                <span class="price-period">/month</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>Beneficios por tu Score Bienvivir</h3>
+                    <h3>Benefits for your Bienvivir Score</h3>
                     <div class="benefits-grid">
                         <div class="benefit-item">
                             <div class="benefit-icon">📉</div>
                             <div class="benefit-content">
-                                <h4>Descuento en prima</h4>
-                                <p>Ahorro acumulado: <strong>420€ este año</strong></p>
+                                <h4>Premium discount</h4>
+                                <p>Accumulated savings: <strong>€420 this year</strong></p>
                             </div>
                         </div>
                         <div class="benefit-item">
                             <div class="benefit-icon">🎁</div>
                             <div class="benefit-content">
-                                <h4>Recompensas exclusivas</h4>
-                                <p>Acceso a <strong>15 recompensas premium</strong></p>
+                                <h4>Exclusive rewards</h4>
+                                <p>Access to <strong>15 premium rewards</strong></p>
                             </div>
                         </div>
                         <div class="benefit-item">
                             <div class="benefit-icon">⭐</div>
                             <div class="benefit-content">
-                                <h4>Puntos acumulados</h4>
-                                <p>Has ganado <strong>1,240 puntos</strong> este mes</p>
+                                <h4>Accumulated points</h4>
+                                <p>You've earned <strong>1,240 points</strong> this month</p>
                             </div>
                         </div>
                         <div class="benefit-item">
                             <div class="benefit-icon">🏆</div>
                             <div class="benefit-content">
-                                <h4>Status preferente</h4>
-                                <p>Atención prioritaria y <strong>sin franquicias</strong></p>
+                                <h4>Preferred status</h4>
+                                <p>Priority attention and <strong>no deductibles</strong></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3>Historial de Prima</h3>
+                    <h3>Premium History</h3>
                     <div class="chart-container">
                         <canvas id="primaChart"></canvas>
                     </div>
@@ -688,7 +693,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 MAPFRE Bienvivir 360. De asegurarte cuando caes, a acompañarte para que vivas mejor.</p>
+            <p>&copy; 2025 MAPFRE Bienvivir 360. From covering you when you fall, to helping you live better.</p>
         </div>
     </footer>
 
